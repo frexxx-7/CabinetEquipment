@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CabinetEquipment.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,16 @@ using System.Windows.Forms;
 
 namespace CabinetEquipment
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
+        }
+
+        private void KabinetButton_Click(object sender, EventArgs e)
+        {
+            new Kabinets().Show();
         }
     }
 }
