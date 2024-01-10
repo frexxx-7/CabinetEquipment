@@ -38,9 +38,9 @@
             // KabinetButton
             // 
             this.KabinetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.KabinetButton.Location = new System.Drawing.Point(151, 81);
+            this.KabinetButton.Location = new System.Drawing.Point(141, 81);
             this.KabinetButton.Name = "KabinetButton";
-            this.KabinetButton.Size = new System.Drawing.Size(159, 46);
+            this.KabinetButton.Size = new System.Drawing.Size(183, 46);
             this.KabinetButton.TabIndex = 0;
             this.KabinetButton.Text = "Кабинеты";
             this.KabinetButton.UseVisualStyleBackColor = true;
@@ -61,19 +61,20 @@
             // TeachersButton
             // 
             this.TeachersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TeachersButton.Location = new System.Drawing.Point(151, 172);
+            this.TeachersButton.Location = new System.Drawing.Point(141, 182);
             this.TeachersButton.Name = "TeachersButton";
-            this.TeachersButton.Size = new System.Drawing.Size(159, 46);
+            this.TeachersButton.Size = new System.Drawing.Size(183, 46);
             this.TeachersButton.TabIndex = 2;
             this.TeachersButton.Text = "Преподаватели";
             this.TeachersButton.UseVisualStyleBackColor = true;
+            this.TeachersButton.Click += new System.EventHandler(this.TeachersButton_Click);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(127, 258);
+            this.button1.Location = new System.Drawing.Point(124, 279);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(204, 46);
+            this.button1.Size = new System.Drawing.Size(218, 46);
             this.button1.TabIndex = 3;
             this.button1.Text = "Перечень оснащений";
             this.button1.UseVisualStyleBackColor = true;
@@ -81,9 +82,9 @@
             // EYMKButton
             // 
             this.EYMKButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EYMKButton.Location = new System.Drawing.Point(151, 341);
+            this.EYMKButton.Location = new System.Drawing.Point(141, 362);
             this.EYMKButton.Name = "EYMKButton";
-            this.EYMKButton.Size = new System.Drawing.Size(159, 46);
+            this.EYMKButton.Size = new System.Drawing.Size(183, 46);
             this.EYMKButton.TabIndex = 4;
             this.EYMKButton.Text = "ЭУМК";
             this.EYMKButton.UseVisualStyleBackColor = true;

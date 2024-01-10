@@ -22,5 +22,10 @@ namespace CabinetEquipment
         {
             new Kabinets().Show();
         }
+
+        private void TeachersButton_Click(object sender, EventArgs e)
+        {
+            new Teachers().Show();
+        }
     }
 }

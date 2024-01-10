@@ -3,24 +3,30 @@ using CabinetEquipment.Classes;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CabinetEquipment.Forms
 {
-    public partial class Kabinets : Form
+    public partial class Teachers : Form
     {
-        public Kabinets()
+        public Teachers()
         {
             InitializeComponent();
         }
-        private void loadInfoKabinets()
+        private void loadInfoTeachers()
         {
             DB db = new DB();
 
-            KabinetsDataGridView.Rows.Clear();
+            TeachersDataGridView.Rows.Clear();
 
-            string query = $"select kabinets.id, kabinets.name, kabinets.area, concat(teachers.surname, ' ', teachers.name, ' ', teachers.patronymic) as teacherFIO, kabinets.floor from kabinets " +
-                $"inner join teachers on teachers.id = kabinets.idTeacher";
+            string query = $"select * from teachers";
 
             db.openConnection();
             using (MySqlCommand mySqlCommand = new MySqlCommand(query, db.getConnection()))
@@ -39,49 +45,48 @@ namespace CabinetEquipment.Forms
                 }
                 reader.Close();
                 foreach (string[] s in dataDB)
-                    KabinetsDataGridView.Rows.Add(s);
+                    TeachersDataGridView.Rows.Add(s);
             }
             db.closeConnection();
         }
 
-        private void Kabinets_Load(object sender, EventArgs e)
+        private void Teachers_Load(object sender, EventArgs e)
         {
-            loadInfoKabinets();
+            loadInfoTeachers();
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            loadInfoKabinets();
+            loadInfoTeachers();
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            var ak = new AddKabinet(null);
-            ak.FormClosed += ak_FormClosed;
-            ak.ShowDialog();
+            var at = new AddTeacher(null);
+            at.FormClosed += as_FormClosed;
+            at.ShowDialog();
         }
-        private void ak_FormClosed(object sender, FormClosedEventArgs e)
+        private void as_FormClosed(object sender, FormClosedEventArgs e)
         {
-            loadInfoKabinets();
+            loadInfoTeachers();
         }
-
         private void EditButton_Click(object sender, EventArgs e)
         {
-            var ak = new AddKabinet(KabinetsDataGridView[0, KabinetsDataGridView.SelectedCells[0].RowIndex].Value.ToString());
-            ak.FormClosed += ak_FormClosed;
-            ak.ShowDialog();
+            var at = new AddTeacher(TeachersDataGridView[0, TeachersDataGridView.SelectedCells[0].RowIndex].Value.ToString());
+            at.FormClosed += as_FormClosed;
+            at.ShowDialog();
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand($"delete from kabinets where id = {KabinetsDataGridView[0, KabinetsDataGridView.SelectedCells[0].RowIndex].Value}", db.getConnection());
+            MySqlCommand command = new MySqlCommand($"delete from teachers where id = {TeachersDataGridView[0, TeachersDataGridView.SelectedCells[0].RowIndex].Value}", db.getConnection());
             db.openConnection();
 
             try
             {
                 command.ExecuteNonQuery();
-                MessageBox.Show("Кабинет удален");
+                MessageBox.Show("Преподаватель удален");
 
             }
             catch
@@ -90,19 +95,16 @@ namespace CabinetEquipment.Forms
             }
 
             db.closeConnection();
-            loadInfoKabinets();
+            loadInfoTeachers();
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
             DB db = new DB();
 
-            KabinetsDataGridView.Rows.Clear();
+            TeachersDataGridView.Rows.Clear();
 
-            string searchString = $"select *, concat(teachers.surname, ' ', teachers.name, ' ', teachers.patronymic) as teacherFIO from kabinets " +
-                $"inner join teachers on teachers.id = kabinets.idTeacher " +
-                $"where concat (kabinets.name, area, patronymic, concat(teachers.surname, ' ', teachers.name, ' ', teachers.patronymic), floor) " +
-                $"like '%" + SearchTextBox.Text + "%'";
+            string searchString = $"select * from teachers where concat (name, surname, patronymic, CK, numberPhone) like '%" + SearchTextBox.Text + "%'";
 
             db.openConnection();
             using (MySqlCommand mySqlCommand = new MySqlCommand(searchString, db.getConnection()))
@@ -121,9 +123,14 @@ namespace CabinetEquipment.Forms
                 }
                 reader.Close();
                 foreach (string[] s in dataDB)
-                    KabinetsDataGridView.Rows.Add(s);
+                    TeachersDataGridView.Rows.Add(s);
             }
             db.closeConnection();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
