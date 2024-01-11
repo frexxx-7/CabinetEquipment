@@ -51,6 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddForms\AddDiscipline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddDiscipline.Designer.cs">
+      <DependentUpon>AddDiscipline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\AddEquipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddEquipment.Designer.cs">
+      <DependentUpon>AddEquipment.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddForms\AddKabinet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,8 +75,26 @@
     <Compile Include="AddForms\AddTeacher.Designer.cs">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddForms\AddTypeEquipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddTypeEquipment.Designer.cs">
+      <DependentUpon>AddTypeEquipment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\ComboboxItem.cs" />
     <Compile Include="Classes\DB.cs" />
+    <Compile Include="Forms\Directorys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Directorys.Designer.cs">
+      <DependentUpon>Directorys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Equipments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Equipments.Designer.cs">
+      <DependentUpon>Equipments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Kabinets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,19 +107,46 @@
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Discipline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Discipline.Designer.cs">
+      <DependentUpon>Discipline.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Teachers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Teachers.Designer.cs">
       <DependentUpon>Teachers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TypeEquipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TypeEquipment.Designer.cs">
+      <DependentUpon>TypeEquipment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddForms\AddDiscipline.resx">
+      <DependentUpon>AddDiscipline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddEquipment.resx">
+      <DependentUpon>AddEquipment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddForms\AddKabinet.resx">
       <DependentUpon>AddKabinet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddForms\AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddTypeEquipment.resx">
+      <DependentUpon>AddTypeEquipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Directorys.resx">
+      <DependentUpon>Directorys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Equipments.resx">
+      <DependentUpon>Equipments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Kabinets.resx">
       <DependentUpon>Kabinets.cs</DependentUpon>
@@ -97,8 +154,14 @@
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Discipline.resx">
+      <DependentUpon>Discipline.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Teachers.resx">
       <DependentUpon>Teachers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TypeEquipment.resx">
+      <DependentUpon>TypeEquipment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

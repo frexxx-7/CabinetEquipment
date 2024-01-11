@@ -27,5 +27,26 @@ namespace CabinetEquipment
         {
             new Teachers().Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Equipments().Show();
+        }
+
+        private void DirectoryButton_Click(object sender, EventArgs e)
+        {
+            new Directorys().Show();
+            this.Hide();
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

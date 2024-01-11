@@ -47,7 +47,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(57, 262);
+            this.label4.Location = new System.Drawing.Point(27, 260);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 20);
             this.label4.TabIndex = 12;
@@ -55,6 +55,7 @@
             // 
             // PatronymicTextBox
             // 
+            this.PatronymicTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.PatronymicTextBox.Location = new System.Drawing.Point(186, 260);
             this.PatronymicTextBox.Name = "PatronymicTextBox";
             this.PatronymicTextBox.Size = new System.Drawing.Size(350, 22);
@@ -64,7 +65,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(57, 173);
+            this.label3.Location = new System.Drawing.Point(27, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 20);
             this.label3.TabIndex = 10;
@@ -72,6 +73,7 @@
             // 
             // SurnameTextBox
             // 
+            this.SurnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.SurnameTextBox.Location = new System.Drawing.Point(186, 171);
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(350, 22);
@@ -81,7 +83,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(57, 97);
+            this.label2.Location = new System.Drawing.Point(27, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 20);
             this.label2.TabIndex = 8;
@@ -89,6 +91,7 @@
             // 
             // NameTextBox
             // 
+            this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.NameTextBox.Location = new System.Drawing.Point(186, 95);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(350, 22);
@@ -96,6 +99,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(181, 19);
@@ -108,7 +112,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(57, 341);
+            this.label5.Location = new System.Drawing.Point(27, 339);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 20);
             this.label5.TabIndex = 14;
@@ -116,6 +120,7 @@
             // 
             // CKComboBox
             // 
+            this.CKComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.CKComboBox.FormattingEnabled = true;
             this.CKComboBox.Items.AddRange(new object[] {
             "Мерчендайзинг и учет",
@@ -133,7 +138,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(57, 421);
+            this.label6.Location = new System.Drawing.Point(27, 419);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(160, 20);
             this.label6.TabIndex = 16;
@@ -141,6 +146,7 @@
             // 
             // NumberPhoneTextBox
             // 
+            this.NumberPhoneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.NumberPhoneTextBox.Location = new System.Drawing.Point(223, 419);
             this.NumberPhoneTextBox.Name = "NumberPhoneTextBox";
             this.NumberPhoneTextBox.Size = new System.Drawing.Size(313, 22);
