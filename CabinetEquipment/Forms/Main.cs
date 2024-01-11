@@ -48,5 +48,14 @@ namespace CabinetEquipment
         {
             Application.Exit();
         }
+
+        private void EYMKButton_Click(object sender, EventArgs e)
+        {
+            new EYMK().Show();
+        }
+        private void CompoundEYMKButton_Click(object sender, EventArgs e)
+        {
+            new CompoundEYMK().Show();
+        }
     }
 }

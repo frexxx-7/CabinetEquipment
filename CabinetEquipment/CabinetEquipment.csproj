@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddForms\AddCompoundEYMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddCompoundEYMK.Designer.cs">
+      <DependentUpon>AddCompoundEYMK.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddForms\AddDiscipline.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,12 @@
     </Compile>
     <Compile Include="AddForms\AddEquipment.Designer.cs">
       <DependentUpon>AddEquipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\AddEYMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddEYMK.Designer.cs">
+      <DependentUpon>AddEYMK.cs</DependentUpon>
     </Compile>
     <Compile Include="AddForms\AddKabinet.cs">
       <SubType>Form</SubType>
@@ -83,6 +95,12 @@
     </Compile>
     <Compile Include="Classes\ComboboxItem.cs" />
     <Compile Include="Classes\DB.cs" />
+    <Compile Include="Forms\CompoundEYMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CompoundEYMK.Designer.cs">
+      <DependentUpon>CompoundEYMK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Directorys.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +112,12 @@
     </Compile>
     <Compile Include="Forms\Equipments.Designer.cs">
       <DependentUpon>Equipments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EYMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EYMK.Designer.cs">
+      <DependentUpon>EYMK.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Kabinets.cs">
       <SubType>Form</SubType>
@@ -127,11 +151,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddForms\AddCompoundEYMK.resx">
+      <DependentUpon>AddCompoundEYMK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddForms\AddDiscipline.resx">
       <DependentUpon>AddDiscipline.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddForms\AddEquipment.resx">
       <DependentUpon>AddEquipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddEYMK.resx">
+      <DependentUpon>AddEYMK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddForms\AddKabinet.resx">
       <DependentUpon>AddKabinet.cs</DependentUpon>
@@ -142,11 +172,17 @@
     <EmbeddedResource Include="AddForms\AddTypeEquipment.resx">
       <DependentUpon>AddTypeEquipment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CompoundEYMK.resx">
+      <DependentUpon>CompoundEYMK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Directorys.resx">
       <DependentUpon>Directorys.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Equipments.resx">
       <DependentUpon>Equipments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EYMK.resx">
+      <DependentUpon>EYMK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Kabinets.resx">
       <DependentUpon>Kabinets.cs</DependentUpon>

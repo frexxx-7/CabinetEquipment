@@ -35,13 +35,14 @@
             this.EYMKButton = new System.Windows.Forms.Button();
             this.DirectoryButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.CompoundEYMKButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // KabinetButton
             // 
             this.KabinetButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.KabinetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.KabinetButton.Location = new System.Drawing.Point(141, 81);
+            this.KabinetButton.Location = new System.Drawing.Point(141, 147);
             this.KabinetButton.Name = "KabinetButton";
             this.KabinetButton.Size = new System.Drawing.Size(183, 46);
             this.KabinetButton.TabIndex = 0;
@@ -64,7 +65,7 @@
             // 
             this.TeachersButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TeachersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TeachersButton.Location = new System.Drawing.Point(141, 182);
+            this.TeachersButton.Location = new System.Drawing.Point(141, 218);
             this.TeachersButton.Name = "TeachersButton";
             this.TeachersButton.Size = new System.Drawing.Size(183, 46);
             this.TeachersButton.TabIndex = 2;
@@ -76,7 +77,7 @@
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(124, 279);
+            this.button1.Location = new System.Drawing.Point(124, 315);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(218, 46);
             this.button1.TabIndex = 3;
@@ -88,18 +89,19 @@
             // 
             this.EYMKButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.EYMKButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EYMKButton.Location = new System.Drawing.Point(141, 362);
+            this.EYMKButton.Location = new System.Drawing.Point(141, 398);
             this.EYMKButton.Name = "EYMKButton";
             this.EYMKButton.Size = new System.Drawing.Size(183, 46);
             this.EYMKButton.TabIndex = 4;
             this.EYMKButton.Text = "ЭУМК";
             this.EYMKButton.UseVisualStyleBackColor = true;
+            this.EYMKButton.Click += new System.EventHandler(this.EYMKButton_Click);
             // 
             // DirectoryButton
             // 
             this.DirectoryButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DirectoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DirectoryButton.Location = new System.Drawing.Point(141, 449);
+            this.DirectoryButton.Location = new System.Drawing.Point(141, 485);
             this.DirectoryButton.Name = "DirectoryButton";
             this.DirectoryButton.Size = new System.Drawing.Size(183, 46);
             this.DirectoryButton.TabIndex = 5;
@@ -111,7 +113,7 @@
             // 
             this.ExitButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ExitButton.Location = new System.Drawing.Point(141, 537);
+            this.ExitButton.Location = new System.Drawing.Point(141, 573);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(183, 39);
             this.ExitButton.TabIndex = 6;
@@ -119,11 +121,24 @@
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // CompoundEYMKButton
+            // 
+            this.CompoundEYMKButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CompoundEYMKButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CompoundEYMKButton.Location = new System.Drawing.Point(141, 65);
+            this.CompoundEYMKButton.Name = "CompoundEYMKButton";
+            this.CompoundEYMKButton.Size = new System.Drawing.Size(183, 46);
+            this.CompoundEYMKButton.TabIndex = 10;
+            this.CompoundEYMKButton.Text = "Состав ЭУМК";
+            this.CompoundEYMKButton.UseVisualStyleBackColor = true;
+            this.CompoundEYMKButton.Click += new System.EventHandler(this.CompoundEYMKButton_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 597);
+            this.ClientSize = new System.Drawing.Size(473, 668);
+            this.Controls.Add(this.CompoundEYMKButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.DirectoryButton);
             this.Controls.Add(this.EYMKButton);
@@ -149,6 +164,7 @@
         private System.Windows.Forms.Button EYMKButton;
         private System.Windows.Forms.Button DirectoryButton;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Button CompoundEYMKButton;
     }
 }
 
