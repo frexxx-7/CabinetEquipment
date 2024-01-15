@@ -25,9 +25,10 @@ namespace CabinetEquipment.Forms
 
             EYMKDataGridView.Rows.Clear();
 
-            string query = $"select EYMK.id, teachers.name, discipline.name from eymk " +
+            string query = $"select EYMK.id, teachers.name, discipline.name, componentEYMK.title from eymk " +
                 $"inner join teachers on teachers.id = EYMK.idTeacher " +
-                $"inner join discipline on discipline.id = EYMK.idDiscipline";
+                $"inner join discipline on discipline.id = EYMK.idDiscipline "+
+                $"inner join componenteymk on componenteymk.id = EYMK.idComponentEYMK";
 
             db.openConnection();
             using (MySqlCommand mySqlCommand = new MySqlCommand(query, db.getConnection()))
@@ -101,9 +102,10 @@ namespace CabinetEquipment.Forms
 
             EYMKDataGridView.Rows.Clear();
 
-            string searchString = $"select EYMK.id, teachers.name, discipline.name from eymk " +
+            string searchString = $"select EYMK.id, teachers.name, discipline.name, componentEYMK.title from eymk " +
                 $"inner join teachers on teachers.id = EYMK.idTeacher " +
                 $"inner join discipline on discipline.id = EYMK.idDiscipline " +
+                $"inner join compoenteymk on compoenteymk.id = EYMK.idComponentEYMK" +
                 $"where concat (teachers.name, discipline.name) " +
                 $"like '%" + SearchTextBox.Text + "%'";
 

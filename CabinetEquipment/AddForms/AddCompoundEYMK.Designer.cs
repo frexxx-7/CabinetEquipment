@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.ChapterСomboBox = new System.Windows.Forms.ComboBox();
             this.AddButton = new System.Windows.Forms.Button();
@@ -47,7 +47,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(23, 90);
+            this.label1.Location = new System.Drawing.Point(23, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 25);
             this.label1.TabIndex = 37;
@@ -60,7 +60,7 @@
             this.ChapterСomboBox.Items.AddRange(new object[] {
             "Теоритический",
             "Практический"});
-            this.ChapterСomboBox.Location = new System.Drawing.Point(178, 90);
+            this.ChapterСomboBox.Location = new System.Drawing.Point(178, 119);
             this.ChapterСomboBox.Name = "ChapterСomboBox";
             this.ChapterСomboBox.Size = new System.Drawing.Size(468, 24);
             this.ChapterСomboBox.TabIndex = 36;
@@ -68,7 +68,7 @@
             // AddButton
             // 
             this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddButton.Location = new System.Drawing.Point(12, 564);
+            this.AddButton.Location = new System.Drawing.Point(12, 622);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(122, 32);
             this.AddButton.TabIndex = 40;
@@ -79,7 +79,7 @@
             // CancelButton
             // 
             this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButton.Location = new System.Drawing.Point(665, 564);
+            this.CancelButton.Location = new System.Drawing.Point(665, 622);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(122, 32);
             this.CancelButton.TabIndex = 41;
@@ -103,7 +103,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(23, 155);
+            this.label2.Location = new System.Drawing.Point(23, 184);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 25);
             this.label2.TabIndex = 43;
@@ -125,13 +125,13 @@
             this.TeacherColumn,
             this.DisciplineColumn});
             this.EYMKDataGridView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.EYMKDataGridView.Location = new System.Drawing.Point(28, 192);
+            this.EYMKDataGridView.Location = new System.Drawing.Point(28, 212);
             this.EYMKDataGridView.Name = "EYMKDataGridView";
             this.EYMKDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EYMKDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EYMKDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.EYMKDataGridView.RowTemplate.Height = 24;
-            this.EYMKDataGridView.Size = new System.Drawing.Size(740, 344);
+            this.EYMKDataGridView.Size = new System.Drawing.Size(740, 313);
             this.EYMKDataGridView.TabIndex = 44;
             // 
             // idEYMKColumn
@@ -157,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 608);
+            this.ClientSize = new System.Drawing.Size(799, 666);
             this.Controls.Add(this.EYMKDataGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);

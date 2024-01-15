@@ -52,6 +52,15 @@ namespace CabinetEquipment.AddForms
                         row.DefaultCellStyle.BackColor = Color.Green;
                     }
                 }
+                foreach (DataGridViewRow row in EYMKDataGridView.Rows)
+                {
+                    string id = row.Cells["idComponentEYMK"].Value.ToString();
+
+                    if (id == reader["idEYMK"].ToString())
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Green;
+                    }
+                }
             }
             reader.Close();
 

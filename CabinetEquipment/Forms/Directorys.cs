@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CabinetEquipment.AddForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,11 @@ namespace CabinetEquipment.Forms
         private void SubjectsButton_Click(object sender, EventArgs e)
         {
             new Discipline().Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new AddComponentEYMK().Show();
         }
     }
 }

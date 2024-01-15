@@ -20,6 +20,26 @@ namespace CabinetEquipment.AddForms
             InitializeComponent();
             this.idEYMK = idEYMK;
         }
+        private void loadInfoElements()
+        {
+            DB db = new DB();
+            string queryInfo = $"SELECT id, title FROM componenteymk";
+            MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
+
+            db.openConnection();
+
+            MySqlDataReader reader = mySqlCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                ComboboxItem item = new ComboboxItem();
+                item.Text = $" {reader[1]}";
+                item.Value = reader[0];
+                ElementComboBox.Items.Add(item);
+            }
+            reader.Close();
+
+            db.closeConnection();
+        }
         private void loadInfoDiscipline()
         {
             DB db = new DB();
@@ -92,6 +112,16 @@ namespace CabinetEquipment.AddForms
                         }
                     }
                 }
+                for (int i = 0; i < ElementComboBox.Items.Count; i++)
+                {
+                    if (reader["idComponentEYMK"].ToString() != "")
+                    {
+                        if (Convert.ToInt32((ElementComboBox.Items[i] as ComboboxItem).Value) == Convert.ToInt32(reader["idComponentEYMK"]))
+                        {
+                            ElementComboBox.SelectedIndex = i;
+                        }
+                    }
+                }
             }
             reader.Close();
 
@@ -103,9 +133,10 @@ namespace CabinetEquipment.AddForms
             DB db = new DB();
             if (idEYMK == null)
             {
-                MySqlCommand command = new MySqlCommand($"INSERT into eymk (idDiscipline, idTeacher) values(@idDiscipline, @idTeacher)", db.getConnection());
+                MySqlCommand command = new MySqlCommand($"INSERT into eymk (idDiscipline, idTeacher, idComponentEYMK) values(@idDiscipline, @idTeacher, @idComponentEYMK)", db.getConnection());
                 command.Parameters.AddWithValue("@idDiscipline", (disciplineComboBox.SelectedItem as ComboboxItem).Value);
                 command.Parameters.AddWithValue("@idTeacher", (teachersComboBox.SelectedItem as ComboboxItem).Value);
+                command.Parameters.AddWithValue("@idComponentEYMK", (ElementComboBox.SelectedItem as ComboboxItem).Value);
                 db.openConnection();
 
                 try
@@ -124,9 +155,10 @@ namespace CabinetEquipment.AddForms
             }
             else
             {
-                MySqlCommand command = new MySqlCommand($"update eymk set idDiscipline = @idDiscipline, idTeacher = @idTeacher where id = {idEYMK}", db.getConnection());
+                MySqlCommand command = new MySqlCommand($"update eymk set idDiscipline = @idDiscipline, idTeacher = @idTeacher, idComponentEYMK = @idComponentEYMK where id = {idEYMK}", db.getConnection());
                 command.Parameters.AddWithValue("@idDiscipline", (disciplineComboBox.SelectedItem as ComboboxItem).Value);
                 command.Parameters.AddWithValue("@idTeacher", (teachersComboBox.SelectedItem as ComboboxItem).Value);
+                command.Parameters.AddWithValue("@idComponentEYMK", (ElementComboBox.SelectedItem as ComboboxItem).Value);
 
                 db.openConnection();
 
@@ -150,6 +182,7 @@ namespace CabinetEquipment.AddForms
         {
             loadInfoDiscipline();
             loadInfoTeachers();
+            loadInfoElements();
 
             if (idEYMK != null)
             {

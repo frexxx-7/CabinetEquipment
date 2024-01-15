@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 11 2024 г., 23:27
+-- Время создания: Янв 15 2024 г., 16:53
 -- Версия сервера: 10.3.22-MariaDB
 -- Версия PHP: 7.4.5
 
@@ -24,6 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `componenteymk`
+--
+
+CREATE TABLE `componenteymk` (
+  `id` int(11) NOT NULL,
+  `type` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `componenteymk`
+--
+
+INSERT INTO `componenteymk` (`id`, `type`, `title`, `content`) VALUES
+(1, 'Лабораторная работа', 'wqe', 'qweqwe'),
+(2, 'Практическая работа', 'sdffsd', 'gsdgsdgsd');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `compoundeymk`
 --
 
@@ -40,7 +61,8 @@ CREATE TABLE `compoundeymk` (
 INSERT INTO `compoundeymk` (`id`, `idEYMK`, `name`) VALUES
 (1, 3, 'Теоритический'),
 (2, 2, 'Теоритический'),
-(3, 1, 'Практический');
+(3, 1, 'Практический'),
+(4, 2, 'Практический');
 
 -- --------------------------------------------------------
 
@@ -92,17 +114,19 @@ INSERT INTO `equipment` (`id`, `idTypeEquipment`, `name`, `count`, `idKabinet`) 
 CREATE TABLE `eymk` (
   `id` int(11) NOT NULL,
   `idDiscipline` int(11) DEFAULT NULL,
-  `idTeacher` int(11) DEFAULT NULL
+  `idTeacher` int(11) DEFAULT NULL,
+  `idComponentEYMK` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `eymk`
 --
 
-INSERT INTO `eymk` (`id`, `idDiscipline`, `idTeacher`) VALUES
-(1, 3, 3),
-(2, 2, 3),
-(3, 2, 2);
+INSERT INTO `eymk` (`id`, `idDiscipline`, `idTeacher`, `idComponentEYMK`) VALUES
+(1, 3, 3, 2),
+(2, 2, 3, 2),
+(3, 2, 2, 1),
+(4, 2, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -173,6 +197,12 @@ INSERT INTO `typeequipment` (`id`, `name`) VALUES
 --
 
 --
+-- Индексы таблицы `componenteymk`
+--
+ALTER TABLE `componenteymk`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `compoundeymk`
 --
 ALTER TABLE `compoundeymk`
@@ -199,7 +229,8 @@ ALTER TABLE `equipment`
 ALTER TABLE `eymk`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idDiscipline` (`idDiscipline`),
-  ADD KEY `idTeacher` (`idTeacher`);
+  ADD KEY `idTeacher` (`idTeacher`),
+  ADD KEY `idComponentEYMK` (`idComponentEYMK`);
 
 --
 -- Индексы таблицы `kabinets`
@@ -225,10 +256,16 @@ ALTER TABLE `typeequipment`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `componenteymk`
+--
+ALTER TABLE `componenteymk`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT для таблицы `compoundeymk`
 --
 ALTER TABLE `compoundeymk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `discipline`
@@ -246,7 +283,7 @@ ALTER TABLE `equipment`
 -- AUTO_INCREMENT для таблицы `eymk`
 --
 ALTER TABLE `eymk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `kabinets`
@@ -288,7 +325,8 @@ ALTER TABLE `equipment`
 --
 ALTER TABLE `eymk`
   ADD CONSTRAINT `eymk_ibfk_1` FOREIGN KEY (`idDiscipline`) REFERENCES `discipline` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `eymk_ibfk_2` FOREIGN KEY (`idTeacher`) REFERENCES `teachers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `eymk_ibfk_2` FOREIGN KEY (`idTeacher`) REFERENCES `teachers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `eymk_ibfk_3` FOREIGN KEY (`idComponentEYMK`) REFERENCES `componenteymk` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `kabinets`
