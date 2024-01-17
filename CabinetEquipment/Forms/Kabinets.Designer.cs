@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BackButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.KabinetsDataGridView = new System.Windows.Forms.DataGridView();
-            this.DeleteButton = new System.Windows.Forms.Button();
-            this.EditButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.SearchButton = new System.Windows.Forms.Button();
             this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TeacherColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FloorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.SearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.KabinetsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +53,7 @@
             this.BackButton.TabIndex = 5;
             this.BackButton.Text = "Назад";
             this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // UpdateButton
             // 
@@ -86,11 +87,42 @@
             this.KabinetsDataGridView.Location = new System.Drawing.Point(12, 71);
             this.KabinetsDataGridView.Name = "KabinetsDataGridView";
             this.KabinetsDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.KabinetsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.KabinetsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.KabinetsDataGridView.RowTemplate.Height = 24;
             this.KabinetsDataGridView.Size = new System.Drawing.Size(1059, 479);
             this.KabinetsDataGridView.TabIndex = 10;
+            // 
+            // idDocrors
+            // 
+            this.idDocrors.HeaderText = "id";
+            this.idDocrors.MinimumWidth = 6;
+            this.idDocrors.Name = "idDocrors";
+            this.idDocrors.Visible = false;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.HeaderText = "Название кабинета";
+            this.NameColumn.MinimumWidth = 6;
+            this.NameColumn.Name = "NameColumn";
+            // 
+            // AreaColumn
+            // 
+            this.AreaColumn.HeaderText = "Площадь";
+            this.AreaColumn.MinimumWidth = 6;
+            this.AreaColumn.Name = "AreaColumn";
+            // 
+            // TeacherColumn
+            // 
+            this.TeacherColumn.HeaderText = "Преподаватель";
+            this.TeacherColumn.MinimumWidth = 6;
+            this.TeacherColumn.Name = "TeacherColumn";
+            // 
+            // FloorColumn
+            // 
+            this.FloorColumn.HeaderText = "Этаж";
+            this.FloorColumn.MinimumWidth = 6;
+            this.FloorColumn.Name = "FloorColumn";
             // 
             // DeleteButton
             // 
@@ -143,37 +175,6 @@
             this.SearchButton.Text = "Поиск";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
-            // idDocrors
-            // 
-            this.idDocrors.HeaderText = "id";
-            this.idDocrors.MinimumWidth = 6;
-            this.idDocrors.Name = "idDocrors";
-            this.idDocrors.Visible = false;
-            // 
-            // NameColumn
-            // 
-            this.NameColumn.HeaderText = "Название кабинета";
-            this.NameColumn.MinimumWidth = 6;
-            this.NameColumn.Name = "NameColumn";
-            // 
-            // AreaColumn
-            // 
-            this.AreaColumn.HeaderText = "Площадь";
-            this.AreaColumn.MinimumWidth = 6;
-            this.AreaColumn.Name = "AreaColumn";
-            // 
-            // TeacherColumn
-            // 
-            this.TeacherColumn.HeaderText = "Преподаватель";
-            this.TeacherColumn.MinimumWidth = 6;
-            this.TeacherColumn.Name = "TeacherColumn";
-            // 
-            // FloorColumn
-            // 
-            this.FloorColumn.HeaderText = "Этаж";
-            this.FloorColumn.MinimumWidth = 6;
-            this.FloorColumn.Name = "FloorColumn";
             // 
             // Kabinets
             // 

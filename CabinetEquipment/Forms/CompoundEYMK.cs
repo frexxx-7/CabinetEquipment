@@ -55,7 +55,7 @@ namespace CabinetEquipment.Forms
             DB db = new DB();
 
 
-            string query = $"select compoundeymk.id, teachers.name, discipline.name, componentEYMK.title from compoundeymk " +
+            string query = $"select compoundeymk.id, concat(teachers.surname, ' ', teachers.name, ' ', teachers.patronymic) as FIOTeachers, discipline.name, componentEYMK.title from compoundeymk " +
                 $"inner join eymk on compoundeymk.idEYMK = eymk.id " +
                 $"inner join teachers on teachers.id = EYMK.idTeacher " +
                 $"inner join discipline on discipline.id = EYMK.idDiscipline " +
@@ -128,6 +128,7 @@ namespace CabinetEquipment.Forms
 
         private void ChapterСomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            EYMKDataGridView.Rows.Clear();
             nameChapter = ChapterСomboBox.SelectedItem.ToString();
             loadInfoEYMKInChapter();
             loadInfoDiscipline();
@@ -144,12 +145,12 @@ namespace CabinetEquipment.Forms
 
             EYMKDataGridView.Rows.Clear();
 
-            string searchString = $"select compoundeymk.id, teachers.name, discipline.name, componentEYMK.title from compoundeymk " +
+            string searchString = $"select compoundeymk.id, concat(teachers.surname, ' ', teachers.name, ' ', teachers.patronymic) as FIOTeachers, discipline.name, componentEYMK.title from compoundeymk " +
                 $"inner join eymk on compoundeymk.idEYMK = eymk.id " +
                 $"inner join teachers on teachers.id = EYMK.idTeacher " +
                 $"inner join discipline on discipline.id = EYMK.idDiscipline " +
                 $"inner join componenteymk on componenteymk.id = EYMK.idComponentEYMK " +
-                $"where compoundeymk.name = '{nameChapter}' AND concat (teachers.name, discipline.name) " +
+                $"where compoundeymk.name = '{nameChapter}' AND concat (concat(teachers.surname, ' ', teachers.name, ' ', teachers.patronymic), discipline.name, componentEYMK.title) " +
                 $"like '%" + SearchTextBox.Text + "%'";
 
             db.openConnection();

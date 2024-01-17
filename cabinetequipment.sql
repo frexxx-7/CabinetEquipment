@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 15 2024 г., 16:53
--- Версия сервера: 10.3.22-MariaDB
--- Версия PHP: 7.4.5
+-- Время создания: Янв 16 2024 г., 08:45
+-- Версия сервера: 8.0.30
+-- Версия PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `componenteymk` (
-  `id` int(11) NOT NULL,
-  `type` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `id` int NOT NULL,
+  `type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -39,8 +39,9 @@ CREATE TABLE `componenteymk` (
 --
 
 INSERT INTO `componenteymk` (`id`, `type`, `title`, `content`) VALUES
-(1, 'Лабораторная работа', 'wqe', 'qweqwe'),
-(2, 'Практическая работа', 'sdffsd', 'gsdgsdgsd');
+(1, 'Лабораторная работа', 'Лабораторная работа №2', 'Что-то умное.'),
+(2, 'Практическая работа', 'Практическая работа №1', 'Что-то умное.'),
+(3, 'Лабораторная работа', 'Лабораторная работа №4', 'Что-то умное.');
 
 -- --------------------------------------------------------
 
@@ -49,9 +50,9 @@ INSERT INTO `componenteymk` (`id`, `type`, `title`, `content`) VALUES
 --
 
 CREATE TABLE `compoundeymk` (
-  `id` int(11) NOT NULL,
-  `idEYMK` int(11) DEFAULT NULL,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `id` int NOT NULL,
+  `idEYMK` int DEFAULT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -61,8 +62,7 @@ CREATE TABLE `compoundeymk` (
 INSERT INTO `compoundeymk` (`id`, `idEYMK`, `name`) VALUES
 (1, 3, 'Теоритический'),
 (2, 2, 'Теоритический'),
-(3, 1, 'Практический'),
-(4, 2, 'Практический');
+(3, 1, 'Практический');
 
 -- --------------------------------------------------------
 
@@ -71,9 +71,9 @@ INSERT INTO `compoundeymk` (`id`, `idEYMK`, `name`) VALUES
 --
 
 CREATE TABLE `discipline` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `CK` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `id` int NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CK` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -81,8 +81,8 @@ CREATE TABLE `discipline` (
 --
 
 INSERT INTO `discipline` (`id`, `name`, `CK`) VALUES
-(2, 'sdvxc', 'Программное обеспечение информационных технологий'),
-(3, 'cvb', 'Экономика и логистика');
+(2, 'БДиСУБД', 'Программное обеспечение информационных технологий'),
+(3, 'ССП', 'Программное обеспечение информационных технологий');
 
 -- --------------------------------------------------------
 
@@ -91,11 +91,11 @@ INSERT INTO `discipline` (`id`, `name`, `CK`) VALUES
 --
 
 CREATE TABLE `equipment` (
-  `id` int(11) NOT NULL,
-  `idTypeEquipment` int(11) DEFAULT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `count` int(11) DEFAULT NULL,
-  `idKabinet` int(11) DEFAULT NULL
+  `id` int NOT NULL,
+  `idTypeEquipment` int DEFAULT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `count` int DEFAULT NULL,
+  `idKabinet` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -103,7 +103,8 @@ CREATE TABLE `equipment` (
 --
 
 INSERT INTO `equipment` (`id`, `idTypeEquipment`, `name`, `count`, `idKabinet`) VALUES
-(1, 3, 'asddd', 323, 2);
+(1, 3, 'Компьютеры', 10, 2),
+(3, 2, 'Компьютеры', 10, 3);
 
 -- --------------------------------------------------------
 
@@ -112,10 +113,10 @@ INSERT INTO `equipment` (`id`, `idTypeEquipment`, `name`, `count`, `idKabinet`) 
 --
 
 CREATE TABLE `eymk` (
-  `id` int(11) NOT NULL,
-  `idDiscipline` int(11) DEFAULT NULL,
-  `idTeacher` int(11) DEFAULT NULL,
-  `idComponentEYMK` int(11) DEFAULT NULL
+  `id` int NOT NULL,
+  `idDiscipline` int DEFAULT NULL,
+  `idTeacher` int DEFAULT NULL,
+  `idComponentEYMK` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -124,7 +125,7 @@ CREATE TABLE `eymk` (
 
 INSERT INTO `eymk` (`id`, `idDiscipline`, `idTeacher`, `idComponentEYMK`) VALUES
 (1, 3, 3, 2),
-(2, 2, 3, 2),
+(2, 2, 3, 3),
 (3, 2, 2, 1),
 (4, 2, 2, 1);
 
@@ -135,11 +136,11 @@ INSERT INTO `eymk` (`id`, `idDiscipline`, `idTeacher`, `idComponentEYMK`) VALUES
 --
 
 CREATE TABLE `kabinets` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `area` int(11) DEFAULT NULL,
-  `idTeacher` int(11) DEFAULT NULL,
-  `floor` int(11) DEFAULT NULL
+  `id` int NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `area` int DEFAULT NULL,
+  `idTeacher` int DEFAULT NULL,
+  `floor` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -147,8 +148,8 @@ CREATE TABLE `kabinets` (
 --
 
 INSERT INTO `kabinets` (`id`, `name`, `area`, `idTeacher`, `floor`) VALUES
-(2, 'qwe', 654, 2, 7),
-(3, 'zxc', 45, 2, 4);
+(2, 'Ведение дипломного проектирования', 20, 2, 4),
+(3, 'Сопровождение и управление базами данных', 45, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -157,12 +158,12 @@ INSERT INTO `kabinets` (`id`, `name`, `area`, `idTeacher`, `floor`) VALUES
 --
 
 CREATE TABLE `teachers` (
-  `id` int(11) NOT NULL,
-  `surname` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `patronymic` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `CK` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `numberPhone` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `id` int NOT NULL,
+  `surname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `patronymic` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CK` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `numberPhone` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -170,8 +171,8 @@ CREATE TABLE `teachers` (
 --
 
 INSERT INTO `teachers` (`id`, `surname`, `name`, `patronymic`, `CK`, `numberPhone`) VALUES
-(2, 'asd', 'qwe', 'qwe', 'Правовые дисциплины', '234'),
-(3, 'zxc', 'asd', 'asd', 'Экономика и логистика', '234');
+(2, 'Цыганок', 'Ольга', 'Чеславовна', 'Правовые дисциплины', '234'),
+(3, 'Янцевич', 'Людмила', 'Александровна', 'Экономика и логистика', '234');
 
 -- --------------------------------------------------------
 
@@ -180,8 +181,8 @@ INSERT INTO `teachers` (`id`, `surname`, `name`, `patronymic`, `CK`, `numberPhon
 --
 
 CREATE TABLE `typeequipment` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `id` int NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -189,8 +190,8 @@ CREATE TABLE `typeequipment` (
 --
 
 INSERT INTO `typeequipment` (`id`, `name`) VALUES
-(2, 'ячс'),
-(3, 'xcv');
+(2, 'Техничекское средство обучения'),
+(3, 'Электронные учебники');
 
 --
 -- Индексы сохранённых таблиц
@@ -259,49 +260,49 @@ ALTER TABLE `typeequipment`
 -- AUTO_INCREMENT для таблицы `componenteymk`
 --
 ALTER TABLE `componenteymk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `compoundeymk`
 --
 ALTER TABLE `compoundeymk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `discipline`
 --
 ALTER TABLE `discipline`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `equipment`
 --
 ALTER TABLE `equipment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `eymk`
 --
 ALTER TABLE `eymk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `kabinets`
 --
 ALTER TABLE `kabinets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `typeequipment`
 --
 ALTER TABLE `typeequipment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BackButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
@@ -78,7 +78,6 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.DeleteButton.Location = new System.Drawing.Point(289, 296);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(114, 36);
@@ -89,7 +88,6 @@
             // 
             // EditButton
             // 
-            this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.EditButton.Location = new System.Drawing.Point(155, 296);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(114, 36);
@@ -100,7 +98,6 @@
             // 
             // AddButton
             // 
-            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AddButton.Location = new System.Drawing.Point(22, 296);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(114, 36);
@@ -111,7 +108,7 @@
             // 
             // SearchTextBox
             // 
-            this.SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchTextBox.Location = new System.Drawing.Point(608, 303);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(243, 22);
@@ -119,7 +116,7 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchButton.Location = new System.Drawing.Point(871, 296);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(114, 36);
@@ -223,8 +220,7 @@
             this.EYMKDataGridView.AllowUserToDeleteRows = false;
             this.EYMKDataGridView.AllowUserToResizeColumns = false;
             this.EYMKDataGridView.AllowUserToResizeRows = false;
-            this.EYMKDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.EYMKDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EYMKDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EYMKDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -237,8 +233,8 @@
             this.EYMKDataGridView.Location = new System.Drawing.Point(383, 64);
             this.EYMKDataGridView.Name = "EYMKDataGridView";
             this.EYMKDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EYMKDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EYMKDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.EYMKDataGridView.RowTemplate.Height = 24;
             this.EYMKDataGridView.Size = new System.Drawing.Size(602, 215);
             this.EYMKDataGridView.TabIndex = 44;
