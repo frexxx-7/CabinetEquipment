@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.EquipmentsDataGridView = new System.Windows.Forms.DataGridView();
             this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +42,7 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.ReportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.EquipmentsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,8 +67,8 @@
             this.EquipmentsDataGridView.Location = new System.Drawing.Point(12, 72);
             this.EquipmentsDataGridView.Name = "EquipmentsDataGridView";
             this.EquipmentsDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EquipmentsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EquipmentsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.EquipmentsDataGridView.RowTemplate.Height = 24;
             this.EquipmentsDataGridView.Size = new System.Drawing.Size(966, 455);
             this.EquipmentsDataGridView.TabIndex = 11;
@@ -176,11 +177,23 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
+            // ReportButton
+            // 
+            this.ReportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ReportButton.Location = new System.Drawing.Point(416, 598);
+            this.ReportButton.Name = "ReportButton";
+            this.ReportButton.Size = new System.Drawing.Size(114, 36);
+            this.ReportButton.TabIndex = 47;
+            this.ReportButton.Text = "Отчет";
+            this.ReportButton.UseVisualStyleBackColor = true;
+            this.ReportButton.Click += new System.EventHandler(this.ReportButton_Click);
+            // 
             // Equipments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 646);
+            this.Controls.Add(this.ReportButton);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.DeleteButton);
@@ -214,5 +227,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CountColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameKabinetColumn;
+        private System.Windows.Forms.Button ReportButton;
     }
 }

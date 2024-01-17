@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BackButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.EYMKDataGridView = new System.Windows.Forms.DataGridView();
+            this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeacherColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DisciplineColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ElementColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TeacherColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DisciplineColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ElementColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.EYMKDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // UpdateButton
             // 
             this.UpdateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UpdateButton.Location = new System.Drawing.Point(777, 12);
+            this.UpdateButton.Location = new System.Drawing.Point(829, 12);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(114, 36);
             this.UpdateButton.TabIndex = 15;
@@ -85,11 +86,36 @@
             this.EYMKDataGridView.Location = new System.Drawing.Point(12, 68);
             this.EYMKDataGridView.Name = "EYMKDataGridView";
             this.EYMKDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EYMKDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EYMKDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.EYMKDataGridView.RowTemplate.Height = 24;
-            this.EYMKDataGridView.Size = new System.Drawing.Size(879, 413);
+            this.EYMKDataGridView.Size = new System.Drawing.Size(931, 413);
             this.EYMKDataGridView.TabIndex = 25;
+            // 
+            // idDocrors
+            // 
+            this.idDocrors.HeaderText = "id";
+            this.idDocrors.MinimumWidth = 6;
+            this.idDocrors.Name = "idDocrors";
+            this.idDocrors.Visible = false;
+            // 
+            // TeacherColumn
+            // 
+            this.TeacherColumn.HeaderText = "Преподаватель";
+            this.TeacherColumn.MinimumWidth = 6;
+            this.TeacherColumn.Name = "TeacherColumn";
+            // 
+            // DisciplineColumn
+            // 
+            this.DisciplineColumn.HeaderText = "Предмет";
+            this.DisciplineColumn.MinimumWidth = 6;
+            this.DisciplineColumn.Name = "DisciplineColumn";
+            // 
+            // ElementColumn
+            // 
+            this.ElementColumn.HeaderText = "Элемент";
+            this.ElementColumn.MinimumWidth = 6;
+            this.ElementColumn.Name = "ElementColumn";
             // 
             // DeleteButton
             // 
@@ -127,7 +153,7 @@
             // SearchTextBox
             // 
             this.SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchTextBox.Location = new System.Drawing.Point(514, 537);
+            this.SearchTextBox.Location = new System.Drawing.Point(566, 537);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(243, 22);
             this.SearchTextBox.TabIndex = 30;
@@ -135,7 +161,7 @@
             // SearchButton
             // 
             this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchButton.Location = new System.Drawing.Point(777, 530);
+            this.SearchButton.Location = new System.Drawing.Point(829, 530);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(114, 36);
             this.SearchButton.TabIndex = 29;
@@ -143,36 +169,23 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // idDocrors
+            // ReportButton
             // 
-            this.idDocrors.HeaderText = "id";
-            this.idDocrors.MinimumWidth = 6;
-            this.idDocrors.Name = "idDocrors";
-            this.idDocrors.Visible = false;
-            // 
-            // TeacherColumn
-            // 
-            this.TeacherColumn.HeaderText = "Преподаватель";
-            this.TeacherColumn.MinimumWidth = 6;
-            this.TeacherColumn.Name = "TeacherColumn";
-            // 
-            // DisciplineColumn
-            // 
-            this.DisciplineColumn.HeaderText = "Предмет";
-            this.DisciplineColumn.MinimumWidth = 6;
-            this.DisciplineColumn.Name = "DisciplineColumn";
-            // 
-            // ElementColumn
-            // 
-            this.ElementColumn.HeaderText = "Элемент";
-            this.ElementColumn.MinimumWidth = 6;
-            this.ElementColumn.Name = "ElementColumn";
+            this.ReportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ReportButton.Location = new System.Drawing.Point(411, 530);
+            this.ReportButton.Name = "ReportButton";
+            this.ReportButton.Size = new System.Drawing.Size(114, 36);
+            this.ReportButton.TabIndex = 48;
+            this.ReportButton.Text = "Отчет";
+            this.ReportButton.UseVisualStyleBackColor = true;
+            this.ReportButton.Click += new System.EventHandler(this.ReportButton_Click);
             // 
             // EYMK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 578);
+            this.ClientSize = new System.Drawing.Size(955, 578);
+            this.Controls.Add(this.ReportButton);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.DeleteButton);
@@ -205,5 +218,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TeacherColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DisciplineColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ElementColumn;
+        private System.Windows.Forms.Button ReportButton;
     }
 }

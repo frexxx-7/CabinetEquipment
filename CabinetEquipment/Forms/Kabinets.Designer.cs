@@ -42,6 +42,7 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.ReportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.KabinetsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,11 +177,23 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
+            // ReportButton
+            // 
+            this.ReportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ReportButton.Location = new System.Drawing.Point(419, 572);
+            this.ReportButton.Name = "ReportButton";
+            this.ReportButton.Size = new System.Drawing.Size(114, 36);
+            this.ReportButton.TabIndex = 49;
+            this.ReportButton.Text = "Отчет";
+            this.ReportButton.UseVisualStyleBackColor = true;
+            this.ReportButton.Click += new System.EventHandler(this.ReportButton_Click);
+            // 
             // Kabinets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 620);
+            this.Controls.Add(this.ReportButton);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.DeleteButton);
@@ -214,5 +227,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FloorColumn;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Button ReportButton;
     }
 }

@@ -50,6 +50,7 @@
             this.TeacherColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DisciplineColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ElementColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EYMKDataGridView)).BeginInit();
@@ -264,11 +265,22 @@
             this.ElementColumn.MinimumWidth = 6;
             this.ElementColumn.Name = "ElementColumn";
             // 
+            // ReportButton
+            // 
+            this.ReportButton.Location = new System.Drawing.Point(421, 296);
+            this.ReportButton.Name = "ReportButton";
+            this.ReportButton.Size = new System.Drawing.Size(114, 36);
+            this.ReportButton.TabIndex = 45;
+            this.ReportButton.Text = "Отчет";
+            this.ReportButton.UseVisualStyleBackColor = true;
+            this.ReportButton.Click += new System.EventHandler(this.ReportButton_Click);
+            // 
             // CompoundEYMK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 774);
+            this.Controls.Add(this.ReportButton);
             this.Controls.Add(this.EYMKDataGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -316,5 +328,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TeacherColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DisciplineColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ElementColumn;
+        private System.Windows.Forms.Button ReportButton;
     }
 }

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace CabinetEquipment.Forms
 {
@@ -137,6 +138,40 @@ namespace CabinetEquipment.Forms
         private void UpdateButton_Click(object sender, EventArgs e)
         {
             loadInfoEquipment();
+        }
+
+        private void ReportButton_Click(object sender, EventArgs e)
+        {
+            Excel.Application excelApp = new Excel.Application();
+            Excel.Workbook workbook = excelApp.Workbooks.Add();
+            Excel.Worksheet worksheet = workbook.ActiveSheet;
+            for (int j = 0; j < EquipmentsDataGridView.Columns.Count; j++)
+            {
+                if (EquipmentsDataGridView.Columns[j].Visible)
+                {
+                    worksheet.Cells[1, j] = EquipmentsDataGridView.Columns[j].HeaderText;
+                }
+            }
+            for (int i = 0; i < EquipmentsDataGridView.Rows.Count; i++)
+            {
+                for (int j = 0; j < EquipmentsDataGridView.Columns.Count; j++)
+                {
+                    if (EquipmentsDataGridView.Columns[j].Visible)
+                    {
+                        worksheet.Cells[i + 2, j] = EquipmentsDataGridView.Rows[i].Cells[j].Value;
+                    }
+                }
+            }
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel File|*.xlsx";
+            saveFileDialog1.Title = "Сохранить Excel файл";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                workbook.SaveAs(saveFileDialog1.FileName);
+            }
+            workbook.Close();
+            excelApp.Quit();
         }
     }
 }

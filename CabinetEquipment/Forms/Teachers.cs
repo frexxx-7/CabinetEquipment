@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace CabinetEquipment.Forms
 {
@@ -131,6 +132,40 @@ namespace CabinetEquipment.Forms
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ReportButton_Click(object sender, EventArgs e)
+        {
+            Excel.Application excelApp = new Excel.Application();
+            Excel.Workbook workbook = excelApp.Workbooks.Add();
+            Excel.Worksheet worksheet = workbook.ActiveSheet;
+            for (int j = 0; j < TeachersDataGridView.Columns.Count; j++)
+            {
+                if (TeachersDataGridView.Columns[j].Visible)
+                {
+                    worksheet.Cells[1, j] = TeachersDataGridView.Columns[j].HeaderText;
+                }
+            }
+            for (int i = 0; i < TeachersDataGridView.Rows.Count; i++)
+            {
+                for (int j = 0; j < TeachersDataGridView.Columns.Count; j++)
+                {
+                    if (TeachersDataGridView.Columns[j].Visible)
+                    {
+                        worksheet.Cells[i + 2, j] = TeachersDataGridView.Rows[i].Cells[j].Value;
+                    }
+                }
+            }
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel File|*.xlsx";
+            saveFileDialog1.Title = "Сохранить Excel файл";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                workbook.SaveAs(saveFileDialog1.FileName);
+            }
+            workbook.Close();
+            excelApp.Quit();
         }
     }
 }

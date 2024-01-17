@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BackButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
@@ -40,6 +40,7 @@
             this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CkColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DisciplineDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,8 +136,8 @@
             this.DisciplineDataGridView.Location = new System.Drawing.Point(7, 82);
             this.DisciplineDataGridView.Name = "DisciplineDataGridView";
             this.DisciplineDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DisciplineDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DisciplineDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.DisciplineDataGridView.RowTemplate.Height = 24;
             this.DisciplineDataGridView.Size = new System.Drawing.Size(962, 455);
             this.DisciplineDataGridView.TabIndex = 24;
@@ -160,11 +161,23 @@
             this.CkColumn.MinimumWidth = 6;
             this.CkColumn.Name = "CkColumn";
             // 
+            // ReportButton
+            // 
+            this.ReportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ReportButton.Location = new System.Drawing.Point(420, 571);
+            this.ReportButton.Name = "ReportButton";
+            this.ReportButton.Size = new System.Drawing.Size(114, 36);
+            this.ReportButton.TabIndex = 46;
+            this.ReportButton.Text = "Отчет";
+            this.ReportButton.UseVisualStyleBackColor = true;
+            this.ReportButton.Click += new System.EventHandler(this.ReportButton_Click);
+            // 
             // Discipline
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 619);
+            this.Controls.Add(this.ReportButton);
             this.Controls.Add(this.DisciplineDataGridView);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.SearchButton);
@@ -196,5 +209,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDocrors;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CkColumn;
+        private System.Windows.Forms.Button ReportButton;
     }
 }
